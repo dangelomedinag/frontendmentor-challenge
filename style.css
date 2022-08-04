@@ -1,0 +1,76 @@
+:root {
+  --primary-orange: hsl(25, 97%, 53%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-light-grey: hsl(217, 12%, 63%);
+  --neutral-medium-grey: hsl(216, 12%, 54%);
+  --neutral-dark-blue: hsl(213, 19%, 18%);
+  --neutral-very-dark-blue: hsl(216, 12%, 8%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+
+  color: var(--neutral-white);
+}
+
+#main {
+  display: grid;
+  place-items: center;
+}
+
+#footer {
+  margin-top: 1em;
+}
+
+/* <section class="rating">
+  <header class="rating__header">
+    <i>icon</i>
+  </header>
+  <main class="rating__main">
+    <h1 class="rating__title">How did we do?</h1>
+    <p class="rating__copy">
+      Please let us know how we did with your support request.
+    </p>
+    <div class="rating__selection">
+      <button class="rating__btn" data-rating="1">1</button>
+      <button class="rating__btn" data-rating="2">2</button>
+      <button class="rating__btn" data-rating="3">3</button>
+      <button class="rating__btn" data-rating="4">4</button>
+      <button class="rating__btn" data-rating="5">5</button>
+    </div>
+  </main>
+  <footer class="rating__footer">
+    <button class="rating__submit">submit</button>
+  </footer>
+</section> */
+
+/* rating component card */
+.rating {
+  background: radial-gradient(
+    ellipse at top,
+    var(--neutral-dark-blue) -20%,
+    transparent 50%
+  );
+  background-color: var(--neutral-very-dark-blue);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding: 1em;
+  border-radius: 15px;
+}
