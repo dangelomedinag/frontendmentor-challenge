@@ -34,12 +34,12 @@ body {
   background-color: var(--neutral-very-dark-blue);
 }
 
-#main {
+main {
   display: grid;
   place-items: center;
 }
 
-#footer {
+footer[role='contentinfo'] {
   margin-top: 1em;
 }
 
@@ -61,49 +61,144 @@ button:focus {
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: deepskyblue;
 }
 
-/* <section class="rating">
-  <header class="rating__header">
-    <i>icon</i>
-  </header>
-  <main class="rating__main">
-    <h1 class="rating__title">How did we do?</h1>
-    <p class="rating__copy">
-      Please let us know how we did with your support request.
-    </p>
-    <div class="rating__selection">
-      <button class="rating__btn" data-rating="1">1</button>
-      <button class="rating__btn" data-rating="2">2</button>
-      <button class="rating__btn" data-rating="3">3</button>
-      <button class="rating__btn" data-rating="4">4</button>
-      <button class="rating__btn" data-rating="5">5</button>
-    </div>
-  </main>
-  <footer class="rating__footer">
-    <button class="rating__submit">submit</button>
-  </footer>
-  <-- step 2 -->
-   <img
-    class="rating__img"
-    src="/images/illustration-thank-you.svg"
-    alt="thanks you"
-  />
-  <span class="rating__selection"
-    >You selected <span>null</span> out of 5</span
-  >
-  <h2 class="rating__thanks">Thank you!</h2>
-  <p class="rating__paragraph">
-    We appreciate you taking the time to give a rating. If you ever need
-    more support, don’t hesitate to get in touch!
-  </p>
-</section> */
+/* animation */
+
+@keyframes select-animate {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* rating component card */
+
+.rating {
+  max-width: 320px;
+  background: radial-gradient(
+    ellipse at top,
+    var(--neutral-medium-grey) -300%,
+    var(--neutral-dark-blue) 30%
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding: 1.5em 2em;
+  border-radius: 20px;
+}
+
+.rating--animated {
+  animation: select-animate 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.rating__header {
+  margin-bottom: 1em;
+}
+.rating__icon {
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 3em;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--btn-medium-grey-opacity);
+}
+
+.rating__main > * {
+  margin: 0;
+}
+.rating__main > * + * {
+  margin-top: 1em;
+}
+.rating__title {
+  font-weight: 400;
+}
+
+.rating__copy {
+  color: var(--neutral-light-grey);
+}
+
+.rating__selection > * {
+  color: var(--neutral-light-grey);
+  flex-basis: 100%;
+  max-width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--btn-medium-grey-opacity);
+  margin: 0;
+  padding: 0;
+}
+.rating__selection {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rating__btn:hover {
+  background-color: var(--primary-orange);
+  color: var(--neutral-white);
+}
+
+.rating__btn--active {
+  animation: select-animate 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: var(--neutral-white);
+  background-color: var(--neutral-medium-grey);
+}
+
+.rating__footer {
+  width: 100%;
+}
+
+.rating__submit {
+  display: block;
+  width: 100%;
+  background-color: var(--primary-orange);
+  padding: 0.8em;
+  margin-top: 2em;
+  border: none;
+  color: var(--neutral-white);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 400;
+  border-radius: 50vh;
+}
+
+.rating__submit:active {
+  transform: translateY(3%);
+}
+
+.rating__submit:hover {
+  cursor: pointer;
+  color: var(--primary-orange);
+  background-color: var(--neutral-white);
+}
+.rating__submit:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* final step thanks */
 
 .rating__img {
-  /* height: 50px; */
-  /* max-height: 50px; */
-  /* width: auto; */
   display: block;
   max-width: 140px;
   margin: 0 auto;
@@ -137,149 +232,4 @@ button:focus {
   text-align: center;
   margin: 0;
   margin-bottom: 1em;
-}
-
-/* rating component card */
-.rating {
-  max-width: 320px;
-
-  background: radial-gradient(
-    ellipse at top,
-    var(--neutral-medium-grey) -300%,
-    var(--neutral-dark-blue) 30%
-  );
-  /* background-color: var(--neutral-dark-blue); */
-  background-repeat: no-repeat;
-  background-position: center;
-
-  padding: 1.5em 2em;
-  border-radius: 20px;
-
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
-  /* align-items: center; */
-}
-
-.rating--animated {
-  animation: select-animate 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.rating__header {
-  margin-bottom: 1em;
-}
-.rating__icon {
-  font-style: normal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 3em;
-  height: 3em;
-  border: none;
-  border-radius: 100%;
-  background-color: var(--btn-medium-grey-opacity);
-}
-
-.rating__main > * {
-  margin: 0;
-}
-.rating__main > * + * {
-  margin-top: 1em;
-}
-.rating__title {
-  font-weight: 400;
-  /* margin-top: 0; */
-  /* margin-bottom: 0.5em; */
-}
-
-.rating__copy {
-  /* margin-top: 0; */
-  /* margin-bottom: 0.5em; */
-  color: var(--neutral-light-grey);
-}
-
-.rating__selection > * {
-  color: var(--neutral-light-grey);
-  flex-basis: 100%;
-  max-width: 3em;
-  height: 3em;
-  border-radius: 100%;
-  border: none;
-  background-color: var(--btn-medium-grey-opacity);
-  margin: 0;
-  padding: 0;
-}
-.rating__selection {
-  /* padding: 1.5em 0; */
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* gap: em; */
-}
-
-.rating__btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-@keyframes select-animate {
-  0% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.rating__btn:hover {
-  background-color: var(--primary-orange);
-  color: var(--neutral-white);
-}
-
-.rating__btn--active {
-  animation: select-animate 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  color: var(--neutral-white);
-  background-color: var(--neutral-medium-grey);
-}
-
-.rating__footer {
-  width: 100%;
-}
-
-.rating__submit {
-  display: block;
-  width: 100%;
-  background-color: var(--primary-orange);
-  padding: 0.8em;
-  margin-top: 2em;
-  border: none;
-  color: var(--neutral-white);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  font-weight: 400;
-  border-radius: 50vh;
-}
-
-.rating__submit:active {
-  /* opacity: 0.8; */
-  transform: translateY(3%);
-}
-
-.rating__submit:hover {
-  cursor: pointer;
-  color: var(--primary-orange);
-  background-color: var(--neutral-white);
-}
-.rating__submit:disabled {
-  /* cursor: pointer;
-  color: var(--primary-orange);
-  background-color: var(--neutral-white); */
-  opacity: 0.3;
-  cursor: not-allowed;
 }
