@@ -11,18 +11,16 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
   - [Built with](#built-with)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![solution](./screenshots/solution-qr-code-component.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution](https://your-solution-url.com)
+- Live Site URL: [live site](https://qr-code-component-frontendmentor-challenge.netlify.app/)
 
 ## My process
 
@@ -30,15 +28,9 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+- github - [dangelomedinag](https://www.your-site.com)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/dangelomedinag)
 - Twitter - [@yourusername](https://www.twitter.com/dangelomedinag)
